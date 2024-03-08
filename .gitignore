@@ -8,3 +8,4 @@ Memory.txt
 robsprite.cfg
 gameinit.cfg
 main.cfg
+!/data/*.*
