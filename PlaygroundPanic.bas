@@ -25,13 +25,19 @@ CLS256(COLOR_BLACK)
 LoadSDBank("game.afb",0,0,0,41)
 
 LoadSDBank("vt24000.bin",0,0,0,42)
-'level1'
+'level1'`
 LoadSDBank("rob1.pt3",0,0,0,43) 'MUSIC_ATTRACT
-LoadSDBank("music.pt3",0,0,0,44) 'MUSIC_GAME
-''LoadSDBank("3-steps.pt3",0,0,0,45) 'MUSIC_ENDLEVEL
-LoadSDBank("thunder.pt3",0,0,0,46) 'MUSIC_ENDLIFE
-LoadSDBank("four_elements.pt3",0,0,0,47) 'MUSIC_ENDGAME
+LoadSDBank("rob2.pt3",0,0,0,44) 'MUSIC_GAME
+LoadSDBank("rob4.pt3",0,0,0,46) 'MUSIC_ENDLIFE
+LoadSDBank("rob3.pt3",0,0,0,47) 'MUSIC_ENDGAME
 LoadSDBank("hits1.pt3",0,0,0,48) 'MUSIC_HITS
+LoadSDBank("hits2.pt3",0,0,0,49) 'MUSIC_HITS
+LoadSDBank("hits3.pt3",0,0,0,50) 'MUSIC_HITS
+LoadSDBank("hits4.pt3",0,0,0,51) 'MUSIC_HITS
+LoadSDBank("hits5.pt3",0,0,0,52) 'MUSIC_HITS
+LoadSDBank("hits6.pt3",0,0,0,53) 'MUSIC_HITS
+LoadSDBank("hits7.pt3",0,0,0,54) 'MUSIC_HITS
+LoadSDBank("hits8.pt3",0,0,0,55) 'MUSIC_HITS
 
 InitSprites2(64, 0, BANK_SPRITES)
 
