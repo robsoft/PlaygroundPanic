@@ -22,7 +22,8 @@ sub InitLevelEndScreen()
 
   L2Text(15, 22, "PRESS SPACE/FIRE", BANK_FONT, 0)
   needInit=2
-  gCurrentTrack=MUSIC_ENDLEVEL
+''  gCurrentTrack=MUSIC_ENDLEVEL
+  gCurrentTrack=MUSIC_ENDLIFE
 end sub
 
 

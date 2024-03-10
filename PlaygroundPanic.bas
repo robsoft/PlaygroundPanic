@@ -18,7 +18,7 @@
 SetupNext()
 CLS256(COLOR_BLACK)
 
-  LoadSDBank("font2.spr", 0, 0, 0, 32) 'BANK_FONT
+  LoadSDBank("font8.spr", 0, 0, 0, 32) 'BANK_FONT
   LoadSDBank("tiles_8x8.spr", 0, 0, 0, 34) 'BANK_TILES
   LoadSDBank("PanicSprites.spr", 0, 0, 0, 36) 'BANK_SPRITES
 
@@ -28,7 +28,7 @@ LoadSDBank("vt24000.bin",0,0,0,42)
 'level1'
 LoadSDBank("rob1.pt3",0,0,0,43) 'MUSIC_ATTRACT
 LoadSDBank("music.pt3",0,0,0,44) 'MUSIC_GAME
-LoadSDBank("3-steps.pt3",0,0,0,45) 'MUSIC_ENDLEVEL
+''LoadSDBank("3-steps.pt3",0,0,0,45) 'MUSIC_ENDLEVEL
 LoadSDBank("thunder.pt3",0,0,0,46) 'MUSIC_ENDLIFE
 LoadSDBank("four_elements.pt3",0,0,0,47) 'MUSIC_ENDGAME
 LoadSDBank("hits1.pt3",0,0,0,48) 'MUSIC_HITS
