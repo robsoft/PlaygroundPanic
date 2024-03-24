@@ -280,3 +280,6 @@ dim gKeyRight as string = "P"
 dim gKeyUp as string = "Q"
 dim gKeyDown as string = "A"
 dim gKeyFire as string = "SPACE"
+
+dim gHiNames(10) as string
+dim gHiScores(10) as UINTEGER

@@ -21,6 +21,35 @@ sub GameInit()
 end sub 
 
 
+function PadUByte(value as ubyte, length as ubyte) as string
+  dim result as string = ""
+  result = Str(value)
+  do until len(result)>=length
+    result = " " + result
+  loop
+  return result
+end function
+
+function PadUInt(value as UINTEGER, length as ubyte) as string
+  dim result as string = ""
+  result = Str(value)
+  do until len(result)>=length
+    result = " " + result
+  loop
+  return result
+end function
+
+function CentreStr(value as string, length as ubyte) as string
+  dim result as string = ""
+  result = value
+  do until len(result)>=length
+    result = " " + result
+    if len(result)<length then result = result + " "
+  loop
+  return result
+end function 
+
+
 ' indicate we want to move to a new screen, tripping the needInit flag along the way
 sub JumpScreen(screen as ubyte)
   screenType = screen

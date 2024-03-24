@@ -121,7 +121,7 @@ sub UpdateLoreScreen()
       endif
     next att
   elseif tSettings = 0 '  time to move on?
-    JumpScreen(CREDITSCREEN)
+    JumpScreen(HISCORELISTSCREEN)
     return
   endif
   tSettings = tSettings - 1 

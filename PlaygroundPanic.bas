@@ -78,11 +78,12 @@ EnableSFX
 #include "CreditScreen.bas"
 
 GenerateLookupTables()
-
+GenerateScoreTable()
 GameInit()
+
+' would load scores, keys etc from prefs here in future'
+
 JumpScreen(ATTRACTSCREEN)
-'JumpScreen(LOOPSCREEN)
-'JumpScreen(GAMEOVERSCREEN)
 
 CLS256(COLOR_BACKGROUND)
 
@@ -140,6 +141,19 @@ sub GenerateLookupTables()
   next n
 end sub  
 
+sub GenerateScoreTable()
+  restore scoredata
+  dim n as ubyte
+  for n=1 to 10
+    read gHiNames(n), gHiScores(n)
+  next n
+scoredata:
+  data "ROBSOFT",10000,"OLIVIA",9500 
+  data "LOUISE",9000,"ANGUS",8500 
+  data "BONNIE",8000,"SCOOBY",7500 
+  data "KEITH",7000,"COLIN",6500 
+  data "KEN",6000,"KEVIN",5500 
+end sub
 
 sub SetupNext()
   asm 
