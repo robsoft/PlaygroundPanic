@@ -1,4 +1,5 @@
 # Playground Panic (ZX Spectrum Next)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 _A fast, arcade-style playground caper for the **ZX Spectrum Next**, written in **NextBASIC**._
 
@@ -127,7 +128,11 @@ PRs and issues welcome. Please:
 
 ## License
 
-MIT — see `LICENSE`.
+This project is licensed under the [MIT License](LICENSE).
+
+**Additional condition:** derivative works may not be distributed under the
+name **Playground Panic**. The name is reserved by the original author.
+
 
 
 
