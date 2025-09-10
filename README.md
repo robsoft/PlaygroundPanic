@@ -1,5 +1,14 @@
 # Playground Panic (ZX Spectrum Next)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Docs](https://img.shields.io/badge/Docs-Developer%20Notes-blue)](DeveloperNotes.md)
+[![WIPs](https://img.shields.io/badge/WIP-Notes-orange)](rob-wip-notes.md)
+
+<p align="center">
+  <a href="https://www.specnext.com">
+    <img src="assets/spectrum-next-logo-300x72.png" alt="Spectrum Next logo" width="300">
+  </a><br>
+  <sub><i>ZX Spectrum Next logo by Rick Dickinson, used with respect for the Spectrum Next project.</i></sub>
+</p>
 
 _A fast, arcade-style playground caper for the **ZX Spectrum Next**, written in **NextBASIC**._
 
@@ -117,6 +126,14 @@ This is a **NextBASIC-first** project:
 - **Black screen/return to BASIC:** check that `_nextlib.bas` is loaded/merged before screens needing Next registers; verify `data/` path.  
 - **No music:** emulator AY disabled or PT3 player not invoked on the relevant screen.  
 - **Slowdowns:** reduce simultaneous sprites or expensive collision checks in `GameHelpers.bas`; precompute tables in `Helpers.bas`.
+
+
+## Acknowledgments
+
+The **ZX Spectrum Next** logo was created by the late **Rick Dickinson** and is used here with respect to the Spectrum Next project.  
+Logo assets were obtained from the [official Spectrum Next website](https://www.specnext.com/spectrum-next-logo/) and converted to PNG format for inclusion in this repository.  
+The logo is a trademark of the Spectrum Next team and is reproduced here solely for documentation and attribution purposes.
+
 
 ## Contributing
 
