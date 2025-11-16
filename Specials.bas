@@ -17,7 +17,7 @@ sub SpawnDog()
   cTargetY(SPRITE_DOG)=GetClearYPos()
   cMode(SPRITE_DOG)=MODE_ACTIVE
   cKind(SPRITE_DOG)=KIND_TARGET
-  cPrivateTimer(SPRITE_DOG) = cast(UINTEGER,TIMER_TO_POO / 4 * 3) ' first one a bit quicker'
+  cPrivateTimer(SPRITE_DOG) = cast(UINTEGER,TIMER_TO_POO / 4) ''4 * 3) ' first one a bit quicker'
   PlaySound(SOUND_NPC_APPEAR)
   gDogMode = 1
 end sub

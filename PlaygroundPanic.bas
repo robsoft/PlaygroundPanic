@@ -6,25 +6,28 @@
 ' Robsoft / Road 2024
 '
 '
-#define NEX 
-#define IM2 
+#DEFINE NEX 
+#DEFINE IM2 
 
-#include <nextlib.bas>
-#include <keys.bas>
-#include <string.bas>
-#include "Constants.bas"
-#include "Helpers.bas"
+#INCLUDE <nextlib.bas>
+#INCLUDE <nextlib_ints.bas>
+#INCLUDE <keys.bas>
+#INCLUDE <string.bas>
+#INCLUDE "Constants.bas"
+#INCLUDE "Helpers.bas"
 
 SetupNext()
 CLS256(COLOR_BLACK)
 
-  LoadSDBank("font8.spr", 0, 0, 0, 32) 'BANK_FONT
+  LoadSDBank("[]font8.spr", 0, 0, 0, 32) 'BANK_FONT
   LoadSDBank("tiles_8x8.spr", 0, 0, 0, 34) 'BANK_TILES
   LoadSDBank("PanicSprites.spr", 0, 0, 0, 36) 'BANK_SPRITES
 
 LoadSDBank("game.afb",0,0,0,41)
 
-LoadSDBank("vt24000.bin",0,0,0,42)
+''LoadSDBank("vt24000.bin",0,0,0,42)
+LoadSDBank("[]ts4000.bin",0,0,0,42) 
+
 'level1'`
 LoadSDBank("rob1.pt3",0,0,0,43) 'MUSIC_ATTRACT
 LoadSDBank("rob2.pt3",0,0,0,44) 'MUSIC_GAME
@@ -42,11 +45,13 @@ LoadSDBank("hits8.pt3",0,0,0,55) 'MUSIC_HITS
 InitSprites2(64, 0, BANK_SPRITES)
 
 InitSFX(41)
-InitMusic(42, MUSIC_ENDLIFE, 0000)
-SetupIM()
+''InitMusic(42, MUSIC_ENDLIFE, 0000)
+InitMusic(42, MUSIC_HITS, 0000)	
+SetUpIM()
 PlaySFX(0)
+
 EnableSFX
-'EnableMusic
+EnableMusic
 
 #include "GameHelpers.bas"
 
@@ -147,13 +152,13 @@ sub GenerateScoreTable()
   for n=1 to 10
     read gHiNames(n), gHiScores(n)
   next n
+end sub
 scoredata:
   data "ROBSOFT",10000,"OLIVIA",9500 
   data "LOUISE",9000,"ANGUS",8500 
   data "BONNIE",8000,"SCOOBY",7500 
   data "KEITH",7000,"COLIN",6500 
   data "KEN",6000,"KEVIN",5500 
-end sub
 
 sub SetupNext()
   asm 

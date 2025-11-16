@@ -10,3 +10,4 @@ gameinit.cfg
 main.cfg
 !/data/*.*
 PlaygroundPanic.cfg
+*.bas.map

@@ -1,12 +1,10 @@
-#include <keys.bas>
-#include <nextlib.bas>
-
 
 ' patches & hacks for Sprite handling
 
 
 ' placeholder
 sub PlaySound(sfx as ubyte)
+  
 	PlaySFX(sfx)
 end sub
 

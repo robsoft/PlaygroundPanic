@@ -1,3 +1,4 @@
+# include <keys.bas>
 ' difference between GameHelpers and Helpers is that GameHelpers knows about the game, the global vars etc,
 ' and Helpers is more general-purpose sprite/machine type stuff
 
@@ -473,13 +474,17 @@ end sub
 
 
 sub ChangeMusic()
-  if gCurrentTrack <> gLastTrack
+  'if gCurrentTrack <> gLastTrack
     DisableMusic
-    InitMusic(42, gCurrentTrack, gSubTrack)
+
+    ''InitMusic(42, gCurrentTrack, gSubTrack)
+    InitMusic(42, 43, 0)
     gSubTrack = 0
+
     EnableMusic
+
     gLastTrack = gCurrentTrack
-  endif
+  'endif
   needInit=0
 end sub
 
@@ -499,6 +504,8 @@ sub GenEndLevelBonusText()
   for bon=1 to lim+1 : read a$: next bon
   gBonusText(1)=a$
   gBonusTextCount=1
+  end sub
+
 bonus:  
   data "A DECK OF MOTORBIKE TOPTRUMPS"
   data "A PACKET OF SPANGLES"
@@ -514,7 +521,7 @@ bonus:
   data "AN AIRWOLF POSTER"
   data "A DR WHO TARGET NOVEL"
   data "A TOP CAT COLOURING BOOK"
-end sub
+
 
 sub GenEndGameBonusText()
   ResetBonusText()
@@ -524,6 +531,8 @@ sub GenEndGameBonusText()
   for bon=1 to lim+1 : read a$: next bon
   gBonusText(1)=a$
   gBonusTextCount=1
+end sub
+
 gameoverbonus:  
   data "A TICKET TO THE LA OLYMPICS"
   data "A MINER(S STRIKE"
@@ -537,7 +546,6 @@ gameoverbonus:
   data "A CHEWED-UP C-90"
   data "A CHERNOBYL DISASTER"
   data "BOB PAISLEY LEAVES LIVERPOOL"
-end sub
 
 sub GenEndLifeBonusText()
   ResetBonusText()
@@ -548,6 +556,8 @@ sub GenEndLifeBonusText()
   for bon=1 to lim+1 : read a$: next bon
   gBonusText(1)=a$
   gBonusTextCount=1
+end sub
+
 endlifebonus:  
   data "A PEPSI ' SHIRLEY POSTER"
   data "LAST WEEK(S TV TIMES"
@@ -559,5 +569,4 @@ endlifebonus:
   data "A MULLET HAIR-CUT"
   data "A CHOCOLATE CIGAR"
   data "A LITTLE BLUE BAG OF SALT"
-end sub
 
