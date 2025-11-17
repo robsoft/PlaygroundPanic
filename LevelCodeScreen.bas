@@ -10,7 +10,7 @@ sub InitLevelCodeScreen()
   AllSpritesOff()
   
   CLS256(COLOR_BACKGROUND)
-  L2Text(1, 1, "ENTER LEVEL CODES", BANK_FONT, 0)
+  L2Text(1, 1, "    ENTER LEVEL CODES", BANK_FONT, 0)
   L2Text(20, 22, "PRESS SPACE", BANK_FONT, 0)
   needInit=0
 end sub

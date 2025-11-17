@@ -10,7 +10,7 @@ sub InitLevelEndScreen()
   AllSpritesOff()  
   
   CLS256(COLOR_BACKGROUND)
-  L2Text(1, 1, "YOU SURVIVED BREAK-TIME...", BANK_FONT, 0)
+  L2Text(1, 1, "  YOU SURVIVED BREAK-TIME...", BANK_FONT, 0)
  
   GenEndLevelBonusText()
   L2Text(1,4,"YOUR PRIZE;", BANK_FONT, 0)

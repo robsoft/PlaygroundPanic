@@ -474,17 +474,16 @@ end sub
 
 
 sub ChangeMusic()
-  'if gCurrentTrack <> gLastTrack
+  if gCurrentTrack <> gLastTrack
     DisableMusic
 
-    ''InitMusic(42, gCurrentTrack, gSubTrack)
-    InitMusic(42, 43, 0)
+    InitMusic(42, gCurrentTrack, gSubTrack)
+    SetUpIM()
     gSubTrack = 0
-
     EnableMusic
 
     gLastTrack = gCurrentTrack
-  'endif
+  endif
   needInit=0
 end sub
 

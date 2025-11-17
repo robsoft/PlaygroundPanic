@@ -12,8 +12,8 @@ sub InitHiScoreListScreen()
   
   CLS256(COLOR_BACKGROUND)
   tSettings = 2000
-  L2Text(1, 1, "PLAYGROUND PANIC", BANK_FONT, 0)
-  L2Text(5, 4, "THE MOST-SLIPPERY KIDS", BANK_FONT, 0)
+  L2Text(1, 1, "      PLAYGROUND PANIC", BANK_FONT, 0)
+  L2Text(1, 3, "   THE MOST-SLIPPERY KIDS", BANK_FONT, 0)
   L2Text(15, 22, "PRESS SPACE/FIRE", BANK_FONT, 0)
 
   ' todo: centre the text of the name, rioght-align the score value

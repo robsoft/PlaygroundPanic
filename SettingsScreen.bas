@@ -28,7 +28,7 @@ sub InitSettingsScreen()
   L2Text(15, 4, "NEW GAME", BANK_FONT, mask)
   L2Text(15, 5, "USE LEVEL CODE", BANK_FONT, mask)
   
-  L2Text(15, 8, "KEMPSTON JOYSTICK", BANK_FONT, mask)
+  L2Text(15, 8, "KEMPSTON STICK", BANK_FONT, mask)
   L2Text(15, 9, gKeyUp+", "+gKeyDown+", "+gKeyLeft+", "+gKeyRight, BANK_FONT, mask)
   L2Text(15, 10, "CHANGE KEYS", BANK_FONT, mask)
 

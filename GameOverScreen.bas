@@ -22,13 +22,9 @@ sub InitGameOverScreen()
   PlayerSpriteOff()
   NPCSpritesOff(NO_RETAIN)
   SpecialSpritesOff()
-  
-  ''DisableMusic
-  ''InitMusic(42, 43, 0000)
-  ''EnableMusic
 
   CLS256(COLOR_RED)
-  L2Text(1, 1, "GAME OVER", BANK_FONT, 0)
+  L2Text(1, 1, "        GAME OVER", BANK_FONT, 0)
 
   GenEndGameBonusText()
   L2Text(1,4,"YOUR PUNISHMENT;", BANK_FONT, 0)

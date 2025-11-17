@@ -19,16 +19,12 @@
 SetupNext()
 CLS256(COLOR_BLACK)
 
-  LoadSDBank("[]font8.spr", 0, 0, 0, 32) 'BANK_FONT
-  LoadSDBank("tiles_8x8.spr", 0, 0, 0, 34) 'BANK_TILES
-  LoadSDBank("PanicSprites.spr", 0, 0, 0, 36) 'BANK_SPRITES
+LoadSDBank("[]font8.spr", 0, 0, 0, 32) ' BANK_FONT
+LoadSDBank("tiles_8x8.spr", 0, 0, 0, 34) ' BANK_TILES
+LoadSDBank("PanicSprites.spr", 0, 0, 0, 36) ' BANK_SPRITES
+LoadSDBank("game.afb",0,0,0,41)  ' BANK_SFX
+LoadSDBank("[]ts4000.bin",0,0,0,42) ' BANK_PLAYER
 
-LoadSDBank("game.afb",0,0,0,41)
-
-''LoadSDBank("vt24000.bin",0,0,0,42)
-LoadSDBank("[]ts4000.bin",0,0,0,42) 
-
-'level1'`
 LoadSDBank("rob1.pt3",0,0,0,43) 'MUSIC_ATTRACT
 LoadSDBank("rob2.pt3",0,0,0,44) 'MUSIC_GAME
 LoadSDBank("rob4.pt3",0,0,0,46) 'MUSIC_ENDLIFE
@@ -43,10 +39,8 @@ LoadSDBank("hits7.pt3",0,0,0,54) 'MUSIC_HITS
 LoadSDBank("hits8.pt3",0,0,0,55) 'MUSIC_HITS
 
 InitSprites2(64, 0, BANK_SPRITES)
-
 InitSFX(41)
-''InitMusic(42, MUSIC_ENDLIFE, 0000)
-InitMusic(42, MUSIC_HITS, 0000)	
+InitMusic(42, MUSIC_ENDLIFE, 0000)
 SetUpIM()
 PlaySFX(0)
 
@@ -55,16 +49,15 @@ EnableMusic
 
 #include "GameHelpers.bas"
 
-  for n = 9 to 21
-    DoTileBank8(n, 12, TILE_BLACK_BACKGROUND, BANK_TILES)
-    DoTileBank8(n, 13, TILE_BLACK_BACKGROUND, BANK_TILES)
-    DoTileBank8(n, 14, TILE_BLACK_BACKGROUND, BANK_TILES)
-  next n
-
-  L2Text(9, 9, "STOP THE TAPE!", BANK_FONT, 0)
-
-  L2Text(8, 12, "PRESS SPACE/FIRE", BANK_FONT, 0)
-  do : loop until SpaceOrFire()=1
+' initial landing page
+for n = 9 to 21
+  DoTileBank8(n, 12, TILE_BLACK_BACKGROUND, BANK_TILES)
+  DoTileBank8(n, 13, TILE_BLACK_BACKGROUND, BANK_TILES)
+  DoTileBank8(n, 14, TILE_BLACK_BACKGROUND, BANK_TILES)
+next n
+L2Text(9, 9, "STOP THE TAPE!", BANK_FONT, 0)
+L2Text(8, 12, "PRESS SPACE/FIRE", BANK_FONT, 0)
+do : loop until SpaceOrFire()=1
 
 
 #include "AttractScreen.bas"
@@ -86,11 +79,12 @@ GenerateLookupTables()
 GenerateScoreTable()
 GameInit()
 
-' would load scores, keys etc from prefs here in future'
+' would load scores, keys etc from prefs here in future
 
 JumpScreen(ATTRACTSCREEN)
 
 CLS256(COLOR_BACKGROUND)
+
 
 ' MAIN GAME LOOP
 do
@@ -129,6 +123,7 @@ do
       endGame=255
     endif
   endif   
+  
 loop
 
 

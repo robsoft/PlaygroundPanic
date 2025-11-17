@@ -16,7 +16,8 @@
 #define BANK_FONT 32
 #define BANK_SPRITES 36
 #define BANK_TILES 34
-
+#define BANK_PLAYER 42
+#define BANK_
 #define MOVE_UP 2
 #define MOVE_DOWN 3
 #define MOVE_RIGHT 0

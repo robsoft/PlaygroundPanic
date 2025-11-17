@@ -1,9 +1,5 @@
-Rob - 16/11/2025
+Rob - 17/11/2025
 1) NBS - doesn't let me edit MD files?
-2) The sound playback doesn't seem to survive 'DISABLEMUSIC'
-3) the fonts seems to be scrambled (now using a built-in one)
-
-
 
 ## Robs Internal Notes (somewhat out of date)  
 * thatcher/dog sprite confusion when it came to leave the screen?  
