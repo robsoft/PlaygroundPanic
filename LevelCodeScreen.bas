@@ -1,8 +1,8 @@
 sub HandleLevelCodeScreen()
-  if needInit=1 then InitLevelCodeScreen()
+  if gNeedInit=1 then InitLevelCodeScreen()
   UpdateLevelCodeScreen()
   ReadLevelCodeKeyboard()
-  if needInit=2 then ChangeMusic()
+  if gNeedInit=2 then ChangeMusic()
 end sub
 
 
@@ -12,7 +12,7 @@ sub InitLevelCodeScreen()
   CLS256(COLOR_BACKGROUND)
   L2Text(1, 1, "    ENTER LEVEL CODES", BANK_FONT, 0)
   L2Text(20, 22, "PRESS SPACE", BANK_FONT, 0)
-  needInit=0
+  gNeedInit=0
 end sub
 
 

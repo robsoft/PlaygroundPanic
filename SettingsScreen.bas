@@ -1,8 +1,8 @@
 sub HandleSettingsScreen()
-  if needInit=1 then InitSettingsScreen()
+  if gNeedInit=1 then InitSettingsScreen()
   UpdateSettingsItems()
   ReadSettingsKeyboard()
-  if needInit=2 then ChangeMusic()
+  if gNeedInit=2 then ChangeMusic()
  
 end sub
 
@@ -43,7 +43,7 @@ sub InitSettingsScreen()
   L2Text(15, 20, "NO GIRLS ALLOWED", BANK_FONT, mask)
 
   RefreshSettings()
-  needInit=2
+  gNeedInit=2
 end sub
 
 

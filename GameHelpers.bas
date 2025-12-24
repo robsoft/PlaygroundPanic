@@ -51,10 +51,10 @@ function CentreStr(value as string, length as ubyte) as string
 end function 
 
 
-' indicate we want to move to a new screen, tripping the needInit flag along the way
+' indicate we want to move to a new screen, tripping the gNeedInit flag along the way
 sub JumpScreen(screen as ubyte)
   screenType = screen
-  needInit = 1
+  gNeedInit = 1
 end sub
 
 
@@ -477,14 +477,13 @@ sub ChangeMusic()
   if gCurrentTrack <> gLastTrack
     DisableMusic
 
-    InitMusic(42, gCurrentTrack, gSubTrack)
+    InitMusic(42, gCurrentTrack, 0)
     SetUpIM()
-    gSubTrack = 0
     EnableMusic
 
     gLastTrack = gCurrentTrack
   endif
-  needInit=0
+  gNeedInit=0
 end sub
 
 
@@ -506,14 +505,14 @@ sub GenEndLevelBonusText()
   end sub
 
 bonus:  
-  data "A DECK OF MOTORBIKE TOPTRUMPS"
+  data "A PACK OF MOTORBIKE TOPTRUMPS"
   data "A PACKET OF SPANGLES"
   data "A WHAM BAR"
-  data "LAST WEEK(S SMASH HITS"
+  data "LAST WEEK'S SMASH HITS"
   data "A COPY OF LOOK-IN"
   data "A SCREWBALL BUBBLY"
   data "A PACK OF ESPANIA 82 STICKERS"
-  data "A CHERRY MR FREEZE"
+  data "A CHERRY MR. FREEZE"
   data "A BAG OF WALKERS SNAPS"
   data "A 10P MIX"
   data "A KIDS FROM FAME VHS"
@@ -534,15 +533,15 @@ end sub
 
 gameoverbonus:  
   data "A TICKET TO THE LA OLYMPICS"
-  data "A MINER(S STRIKE"
+  data "A MINER'S STRIKE"
   data "A FALKLANDS WAR"
-  data "BLAKE(S 7 GOT CANCELLED"
+  data "BLAKE'S 7 GOT CANCELLED"
   data "A VESTA CHOW MEIN MEAL"
   data "A COLD WAR"
   data "TRICKLE-DOWN ECONOMICS"
   data "A CHALLENGER SHUTTLE DISASTER"
   data "AN ACORN ELECTRON"
-  data "A CHEWED-UP C-90"
+  data "A CHEWED-UP TDK C-90"
   data "A CHERNOBYL DISASTER"
   data "BOB PAISLEY LEAVES LIVERPOOL"
 

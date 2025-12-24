@@ -1,9 +1,9 @@
 sub HandleGameOverScreen()
-  if needInit=1 then InitGameOverScreen()
+  if gNeedInit=1 then InitGameOverScreen()
   UpdateGameOverScreen()
   ReadGameOverKeyboard()
   
-  if needInit=2 then ChangeMusic()
+  if gNeedInit=2 then ChangeMusic()
 
 end sub
 
@@ -40,5 +40,5 @@ sub InitGameOverScreen()
   L2Text(15, 22, "PRESS SPACE/FIRE", BANK_FONT, 0)
   
   gCurrentTrack=MUSIC_ENDGAME
-  needInit=2
+  gNeedInit=2
 end sub

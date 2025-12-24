@@ -1,10 +1,10 @@
 sub HandleAttractScreen()
-  if needInit=1 then InitAttractScreen()
+  if gNeedInit=1 then InitAttractScreen()
 
   UpdateAttractScreen()
   ReadAttractKeyboard()
 
-  if needInit=2 then ChangeMusic()
+  if gNeedInit=2 ChangeMusic()
 end sub
 
 
@@ -35,8 +35,7 @@ sub InitAttractScreen()
   L2Text(15, 22, "PRESS SPACE/FIRE", BANK_FONT, 0)
 
   gCurrentTrack = MUSIC_ATTRACT
-  'gSubTrack=100
-  needInit=2
+  gNeedInit=2
 end sub
 
 

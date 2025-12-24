@@ -1,8 +1,8 @@
 sub HandleHiScoreListScreen()
-  if needInit = 1 then  InitHiScoreListScreen()
+  if gNeedInit = 1 then  InitHiScoreListScreen()
   UpdateHiScoreListScreen()
   ReadHiScoreListKeyboard()
-  if needInit=2 then ChangeMusic()
+  if gNeedInit=2 then ChangeMusic()
 end sub
 
 
@@ -31,7 +31,7 @@ sub InitHiScoreListScreen()
     L2Text(22, 8+n, PadUInt(gHiScores(n),6), BANK_FONT, 0)
   next n
 
-  needInit = 0
+  gNeedInit = 0
 end sub
 
 sub UpdateHiScoreListScreen()

@@ -17,7 +17,7 @@ sub SpawnDog()
   cTargetY(SPRITE_DOG)=GetClearYPos()
   cMode(SPRITE_DOG)=MODE_ACTIVE
   cKind(SPRITE_DOG)=KIND_TARGET
-  cPrivateTimer(SPRITE_DOG) = cast(UINTEGER,TIMER_TO_POO / 4) ''4 * 3) ' first one a bit quicker'
+  cPrivateTimer(SPRITE_DOG) = cast(UINTEGER,TIMER_TO_POO / 4)
   PlaySound(SOUND_NPC_APPEAR)
   gDogMode = 1
 end sub
@@ -26,7 +26,7 @@ end sub
 sub SpawnSnatcher()
   cXPos(SPRITE_SNATCHER)=gExitX
   cYPos(SPRITE_SNATCHER)=gExitY
-  if cMode(SPRITE_MILK)=MODE_ACTIVE ' just in case we somehow launch with without target milk
+  if cMode(SPRITE_MILK)=MODE_ACTIVE ' just in case we somehow launch without target milk
     cTargetX(SPRITE_SNATCHER)=cXPos(SPRITE_MILK)
     cTargetY(SPRITE_SNATCHER)=cYPos(SPRITE_MILK)
   else

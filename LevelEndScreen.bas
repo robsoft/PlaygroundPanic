@@ -1,8 +1,8 @@
 sub HandleLevelEndScreen()
-  if needInit=1 then InitLevelEndScreen()
+  if gNeedInit=1 then InitLevelEndScreen()
   UpdateLevelEndScreen()
   ReadLevelEndKeyboard()
-  if needInit=2 then ChangeMusic()
+  if gNeedInit=2 ChangeMusic()
 end sub
 
 
@@ -21,9 +21,9 @@ sub InitLevelEndScreen()
   'next bon
 
   L2Text(15, 22, "PRESS SPACE/FIRE", BANK_FONT, 0)
-  needInit=2
+  ''gNeedInit=2
 ''  gCurrentTrack=MUSIC_ENDLEVEL
-  gCurrentTrack=MUSIC_ENDLIFE
+  ''gCurrentTrack=MUSIC_ENDLIFE
 end sub
 
 

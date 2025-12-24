@@ -1,9 +1,9 @@
 sub HandleKeysScreen()
-  if needInit=1 then InitKeysScreen()
+  if gNeedInit=1 then InitKeysScreen()
 
   UpdateKeysScreen()
   ReadKeysKeyboard()
-  if needInit=2 then ChangeMusic()
+  if gNeedInit=2 then ChangeMusic()
 end sub
 
 sub InitKeysScreen()
@@ -12,7 +12,7 @@ sub InitKeysScreen()
   
   CLS256(COLOR_BACKGROUND)
   L2Text(1, 1, "    REDEFINE KEYS", BANK_FONT, 0)
-  needInit=0
+  gNeedInit=0
 
   gKeyStep=0
 end sub

@@ -103,13 +103,17 @@
 #define SOUND_SLIDE 48
 #define SOUND_BELL 67
 
-#define MUSIC_ATTRACT 43
-#define MUSIC_GAME 44
-#define MUSIC_ENDLIFE 46
-#define MUSIC_ENDLEVEL 45
-#define MUSIC_ENDGAME 47
-#define MUSIC_HITS 48
-#define HITS_COUNT 2
+const MUSIC_ATTRACT as ubyte = 43
+const MUSIC_GAME_1 as ubyte = 44
+const MUSIC_GAME_2 as ubyte = 45
+const MUSIC_GAME_3 as ubyte = 46
+const MUSIC_GAME_4 as ubyte = 47
+const MUSIC_ENDGAME as ubyte = 48
+const MUSIC_LEVEL_1 as ubyte = 49
+const MUSIC_LEVEL_2 as ubyte = 50
+const MUSIC_LEVEL_3 as ubyte = 51
+const MUSIC_LEVEL_4 as ubyte = 52
+const HITS_COUNT as ubyte = 4
 
 #define MODE_ACTIVE 1
 #define MODE_INACTIVE 0
@@ -182,7 +186,7 @@ CONST POO_SLIDE_TIMER as UINTEGER = 100
 ' due to their position in the file, these are (deliberately) basically global variables across the whole project
 ' bad form, but we're not writing enterprise code, we're writing a Spectrum Next game :-)
 dim screenType as ubyte ' stores which screen we're on (game, keys, attract, hiscore etc)
-dim needInit as ubyte '  flag to say the current screen requires initialising
+dim gNeedInit as ubyte '  flag to say the current screen requires initialising
 dim endGame as ubyte = 0 ' flag to indicate the game has ended'
 dim gLevel as ubyte = 1 ' level counter - can be set from a user-input level code
 dim gLives as ubyte = 3
@@ -222,7 +226,6 @@ dim gTimeBetweenSpecials as UINTEGER = 1000
 dim gBonusText(BONUS_TEXT_COUNT) as STRING
 dim gBonusTextCount as ubyte = 0
 dim gCurrentTrack as ubyte = 44
-dim gSubTrack as UINTEGER = 0
 dim gLastTrack as ubyte = 0
 
 ' used for debugging stuff from the game screen

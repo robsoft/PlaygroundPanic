@@ -1,8 +1,8 @@
 sub HandleLoreScreen()
-  if needInit=1 then InitLoreScreen()
+  if gNeedInit=1 then InitLoreScreen()
   UpdateLoreScreen()
   ReadLoreKeyboard()
-  if needInit=2 then ChangeMusic()
+  if gNeedInit=2 then ChangeMusic()
 end sub
 
 
@@ -103,7 +103,7 @@ sub InitLoreScreen()
   L2Text(3, 17, "CANE", BANK_FONT, 0)
   L2Text(3, 20, "POO", BANK_FONT, 0)
 
-  needInit=0
+  gNeedInit=0
 end sub
 
 

@@ -1,8 +1,9 @@
+
 sub HandleLevelStartScreen()
-  if needInit=1 then InitLevelStartScreen()
+  if gNeedInit=1 then InitLevelStartScreen()
   UpdateLevelStartScreen()
   ReadLevelStartKeyboard()
-  if needInit=2 then ChangeMusic()
+  if gNeedInit=2 ChangeMusic()
 end sub
 
 
@@ -10,13 +11,23 @@ sub InitLevelStartScreen()
   AllSpritesOff()
   
   CLS256(COLOR_BACKGROUND)
-  L2Text(1, 1, "LEVEL START", BANK_FONT, 0)
-  L2Text(0,10,"  )WILL HAVE SERIES OF STINGS", BANK_FONT, 0)
-  L2Text(0,11,"     FROM HITS FROM THE DAY*", BANK_FONT, 0)
+
+  if gLevel>1 then
+    L2Text(1, 1, "  YOU SURVIVED BREAK-TIME...", BANK_FONT, 0)
+    GenEndLevelBonusText()
+    L2Text(1, 4,"YOUR PRIZE;", BANK_FONT, 0)
+    L2Text(2, 6, gBonusText(1), BANK_FONT, 0)
+  else
+    L2Text(1, 1, "  SURVIVE BREAK-TIME...!", BANK_FONT, 0)
+  endif
+
+  dim m$ as string = right("00"+str(gLevel mod 100),2)
+  L2Text(1, 10, "        LEVEL " +m$+" START", BANK_FONT, 0)
+
   L2Text(15, 22, "PRESS SPACE/FIRE", BANK_FONT, 0)
-  needInit=2
-  gCurrentTrack = MUSIC_HITS
-  'gSubTrack = gLevel mod HITS_COUNT
+
+  gCurrentTrack = cast(ubyte,MUSIC_LEVEL_1 -1 + (gLevel mod HITS_COUNT)) 
+  gNeedInit=2
 end sub
 
 

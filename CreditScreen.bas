@@ -1,7 +1,8 @@
 sub HandleCreditScreen()
-  if needInit=1 then InitCreditScreen()
+  if gNeedInit=1 then InitCreditScreen()
   UpdateCreditScreen()
   ReadCreditKeyboard()
+  if gNeedInit=2 ChangeMusic()
 end sub
 
 sub InitCreditScreen()
@@ -24,14 +25,15 @@ sub InitCreditScreen()
   L2Text(1 ,18, "THE RETRO / SPECTRUM COMMUNITY", BANK_FONT, 0)
   L2Text(1 ,20, "YOU, FOR TAKING A LOOK AT THIS", BANK_FONT, 0)
 
-  EnableMusic 
-  EnableSFX
+  ''EnableMusic 
+  ''EnableSFX
 
   dim clr as ubyte = pClr<<4
   SetupAttract(1, PLAYERSPRITEWALK+1, PLAYERHARDLEFT, 210, PLAYERHARDRIGHT, 210, 4, PLAYERANIMFRAMECOUNT, MOVE_RIGHT, clr, MOVING)
 
   L2Text(15, 22, "PRESS SPACE/FIRE", BANK_FONT, 0)
-  needInit=0
+  gCurrentTrack = MUSIC_ATTRACT
+  gNeedInit=2
 end sub
 
 

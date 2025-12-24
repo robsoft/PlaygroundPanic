@@ -1,11 +1,11 @@
 sub HandleGameScreen()
-  if needInit=1 then InitGameScreen(gLevel)
+  if gNeedInit=1 then InitGameScreen(gLevel)
 
   ReadGameKeyboard()
   UpdateGamePlayer()
   UpdateGameItems()
 
-  if needInit=2 then ChangeMusic()
+  if gNeedInit=2 then ChangeMusic()
 
   if endGame=1
     LifeOver()
@@ -53,9 +53,9 @@ sub InitLevelDirection(tDir as uByte)
   end sub
 
 
-sub InitGameScreen(level as uByte)
-  needInit = 2
-  gCurrentTrack = MUSIC_GAME
+sub InitGameScreen(level as uByte)  
+  gNeedInit = 2
+  gCurrentTrack = cast(integer, MUSIC_GAME_1 -1 + (gLevel mod 2))
 
   dim tDir as ubyte = gLevel mod 4
   gTimer = GAMETICKSECOND
@@ -125,7 +125,8 @@ end sub
 
 
 sub NextLevel()
-  JumpScreen(LEVELENDSCREEN)
+  gLevel=gLevel+1
+  JumpScreen(LEVELSTARTSCREEN)
 end sub
 
 
@@ -203,13 +204,18 @@ sub LevelEnded()
   gTimeToGo = 0
   gTimer = 0
   PlaySound(SOUND_BELL)
+  
+  ' clear the timer part of the bottom display area
   for n = TILE_LEFT_OOB to 11
     DoTileBank8(n, TILE_BOTTOM_OOB+1, 4, BANK_TILES)
     DoTileBank8(n, TILE_BOTTOM_OOB+2, 4, BANK_TILES)
   next n
   L2Text(TILE_LEFT_OOB, TILE_BOTTOM_OOB+2, "BREAK OVER", BANK_FONT, 0)
+
+  ' open the door
   DoTileBank8(gTileXExit, gTileYExit, gDoorOpen, BANK_TILES) 'TILE_GREEN_BACKGROUND, BANK_TILES)
   DoTileBank8(gTileXExit, gTileYExit+1, TILE_GREEN_BACKGROUND, BANK_TILES) 'TILE_GREEN_BACKGROUND, BANK_TILES)
+  
   EverybodyOut()
 end sub
 
@@ -293,7 +299,7 @@ sub UpdateGameItems()
     endif
   endif
 
-  ' collision check first of all
+  ' then collision check 
   for npc = 1 to SPRITE_COUNT
     if cMode(npc) > MODE_INACTIVE
       if CheckPlayerNPCCollision(npc) = COLLISION
@@ -303,6 +309,7 @@ sub UpdateGameItems()
     endif
   next npc
 
+  ' sliding?
   if gSliding=1
     gSlideTimer=gSlideTimer-1
     if gSlideTimer=0 then gSliding=0
