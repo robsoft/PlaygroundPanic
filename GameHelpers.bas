@@ -5,13 +5,23 @@
 
 function SpaceOrFire() as byte
   if in(31)=JOY_FIRE
-    do : loop until in(31)=0
+    do 
+      asm
+        halt
+      end asm
+    loop until in(31)=0
     return 1
   endif
+
   if GetKeyScanCode()=KEYSPACE
-    do : loop until GetKeyScanCode()=0
+    do 
+      asm
+       halt
+      end asm
+    loop until GetKeyScanCode()=0
     return 1
   endif
+
   return 0
 end function
 

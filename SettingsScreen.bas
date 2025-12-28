@@ -21,12 +21,14 @@ sub InitSettingsScreen()
   dim mask as ubyte = 0
 
   L2Text(7, 1, "PLAYGROUND PANIC", BANK_FONT ,mask)
+
   L2Text(1, 4, "START GAME", BANK_FONT, mask)
+
   L2Text(1, 8, "KEYS", BANK_FONT, mask)
   L2Text(1, 12, "SCHOOL SIZE", BANK_FONT, mask)
   L2Text(1, 16, "SEGREGATION", BANK_FONT, mask)
+
   L2Text(15, 4, "NEW GAME", BANK_FONT, mask)
-  L2Text(15, 5, "USE LEVEL CODE", BANK_FONT, mask)
   
   L2Text(15, 8, "KEMPSTON STICK", BANK_FONT, mask)
   L2Text(15, 9, gKeyUp+", "+gKeyDown+", "+gKeyLeft+", "+gKeyRight, BANK_FONT, mask)
@@ -43,6 +45,7 @@ sub InitSettingsScreen()
   L2Text(15, 20, "NO GIRLS ALLOWED", BANK_FONT, mask)
 
   RefreshSettings()
+  gCurrentTrack = MUSIC_ATTRACT
   gNeedInit=2
 end sub
 
@@ -68,7 +71,7 @@ sub UpSettings()
   if ySettingsHighlight = 4
     ySettingsHighlight = 20
   elseif ySettingsHighlight = 10
-    ySettingsHighlight = 5
+    ySettingsHighlight = 4
   elseif ySettingsHighlight = 12
     ySettingsHighlight = 10
   elseif ySettingsHighlight = 16
@@ -82,7 +85,7 @@ end sub
 
 ' reign-in the y position based on the screen content, going downards
 sub DownSettings()
-  if ySettingsHighlight = 5
+  if ySettingsHighlight = 4
     ySettingsHighlight = 10
   elseif ySettingsHighlight = 10
     ySettingsHighlight = 12
@@ -105,14 +108,7 @@ sub SelectSettings()
     GameInit()
     JumpScreen(LEVELSTARTSCREEN)
     return
-    
-  elseif ySettingsHighlight = 5 'enter level code
-    gLevel = gLevel + 1
-    GameInit()
-    'JumpScreen(LEVELCODESCREEN)
-    JumpScreen(LEVELSTARTSCREEN)
-    return
-
+   
   elseif ySettingsHighlight = 10 ' change keys
     JumpScreen(KEYSSCREEN)
     ySettingsHighlight = 4

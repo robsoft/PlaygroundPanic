@@ -13,8 +13,7 @@ end sub
 
 
 sub ReadGameOverKeyboard()
-  if SpaceOrFire()=1 then JumpScreen(SETTINGSSCREEN)
-
+  if SpaceOrFire()=1 JumpScreen(SETTINGSSCREEN) 
 end sub
 
 

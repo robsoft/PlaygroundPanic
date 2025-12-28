@@ -25,7 +25,7 @@ LoadSDBank("PanicSprites.spr", 0, 0, 0, 36) ' BANK_SPRITES
 LoadSDBank("game.afb",0,0,0,41)  ' BANK_SFX
 LoadSDBank("[]ts4000.bin",0,0,0,42) ' BANK_PLAYER
 
-LoadSDBank("intro_a ttract_1.pt3",0,0,0,43) 'MUSIC_ATTRACT
+LoadSDBank("intro_attract_1.pt3",0,0,0,43) 'MUSIC_ATTRACT
 LoadSDBank("game_theme_1.pt3",0,0,0,44) 'MUSIC_GAME_1
 LoadSDBank("game_theme_2.pt3",0,0,0,45) 'MUSIC_GAME_2
 LoadSDBank("game_theme_1.pt3",0,0,0,46) 'MUSIC_GAME_3
@@ -58,7 +58,11 @@ for n = 9 to 21
 next n
 L2Text(9, 9, "STOP THE TAPE!", BANK_FONT, 0)
 L2Text(8, 12, "PRESS SPACE/FIRE", BANK_FONT, 0)
-do : loop until SpaceOrFire()=1
+do 
+  asm
+    halt
+  end asm
+loop until SpaceOrFire()=1
 
 
 #include "AttractScreen.bas"
@@ -68,10 +72,8 @@ do : loop until SpaceOrFire()=1
 #include "LifeLostSCreen.bas"
 #include "GameScreen.bas"
 #include "LevelStartScreen.bas"
-#include "LevelEndScreen.bas"
 #include "HiScoreEntryScreen.bas"
 #include "HiScoreListScreen.bas"
-#include "LevelCodeScreen.bas"
 #include "KeysScreen.bas"
 #include "LoreScreen.bas"
 #include "CreditScreen.bas"
@@ -95,10 +97,6 @@ do
     HandleGameScreen()
   elseif screenType=LEVELSTARTSCREEN
     HandleLevelStartScreen()
-  elseif screenType=LEVELENDSCREEN
-    HandleLevelEndScreen()
-  elseif screenType=LEVELCODESCREEN
-    HandleLevelCodeScreen()
   elseif screenType=GAMEOVERSCREEN
     HandleGameOverScreen()
   elseif screenType=LIFELOSTSCREEN
